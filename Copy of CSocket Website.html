@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=320, initial-scale=1">
+    <meta charset="utf-8">
+    <style>
+      body, html {
+        min-width: 100%;
+        min-height: 100%;
+        margin: 0;
+        padding: 0;
+        font: Arial 14px;
+        background-color: #202020;
+        overflow-x: hidden;
+        overflow-y: scroll;
+      }
+      
+      #font {
+font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+.proj {
+  position:relative;
+  top: 1000px;
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background-color:#ffffff;
+	border-radius:9px;
+	display:inline-block;
+	cursor:pointer;
+	color:#1970ff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:10px 30px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px white;
+}
+.proj:hover {
+	background-color:#f6f6f6;
+}
+      
+      p{
+        color:#aeaeae;
+        font-family: "Trebuchet MS", Helvetica, sans-serif;
+      }
+      
+      #title{
+        color:white;
+font-family: "Trebuchet MS", Helvetica, sans-serif;
+        font-size:30px;
+        padding:-30px;
+        
+}
+      #image {
+        border: 2px solid white;
+border-radius: 15px;
+}
+      
+      #link {
+color:#00AAFF;
+}
+      .loader {
+        margin: auto;
+        position: relative;
+        padding-left: auto;
+        padding-right: auto;
+        align-content: center;
+  border: 5px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 5px solid #3498db;
+  width: 30px;
+  height: 30px;
+        text-align: center;
+  -webkit-animation: spin 1s linear infinite; /* Safari */
+  animation: spin 1s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+    </style>
+  </head>
+  <body>
+    
+    <script>
+      function go() {
+        document.getElementById("loading").innerHTML = "Redirecting...";
+        console.log("Opening: " + websitelink);
+        window.open(websitelink);
+        window.location.replace(websitelink);
+}
+      var websitelink = null;
+function url() {
+  document.getElementById("field").style.position = "relative";
+  document.getElementById("loader").style.display = "block";
+  document.getElementById("loading").style.display = "inline";
+  var input = document.getElementById("input").value;
+websitelink = "https://heroku.com/deploy?template=" + input;
+  console.log(websitelink);
+  setTimeout("go()",2500);
+  setTimeout("change()",10000);
+}
+      
+      function change() {
+document.getElementById("loading").innerHTML = "If redirect doesn't work, go to this link:" + "<br><strong>" + websitelink + "</strong>";
+}
+      
+     
+</script>
+    
+    <div style="width:100%; height:60px; padding:10px; background-color:#0af; color: white; z-index:-40; background-image: linear-gradient(to bottom right, #0ab0ff 0.0%, #01f 100.0%);">
+      <img src="https://raw.githubusercontent.com/RXCodes/CSocket-Docs/main/5B7868E6-A1F6-416A-847F-977DA0ADD79A.png" style="height:65px"> <h style="font-size:50px; top:15px; left:65px; position:absolute" id="font">CSocket</h>
+      <p id="font" style="position:absolute; top:20px; left:250px; font-size:20px; color:#ffffffbb">
+      Beta
+      </p>   
+    </div> 
+    <hr style="color:white; background-color:white; border: 1.5px solid white; width:99.7%; position:absolute; top:70px; overflow-x: hidden;">
+    
+    <div style="padding:15px; align-content:center;">
+      <p id="title" style="text-align: center;">Realtime multiplayer games made <strong>easy</strong>.</p>
+<p style="text-align: center; top:-20px; position:relative; margin-bottom:-50px">Easily program and deploy your own socket.io server using visual code<br>
+     all on your <strong>iPad</strong> for free!</p>
+      
+    </div>
+    
+    <div id="field" style="margin:50px; height:50px; background-color:#0af; color: white; z-index:-40; background-image: linear-gradient(to bottom right, #0ab0ff 0.0%, #01f 100.0%); border-radius:10px; border-color: white; border-width: 3px; border-style: solid">
+      <a class="proj" style="margin:-100px; top:13px; right:-105px;" onclick="url()">Deploy Now</a>
+      <input type="url" id="input" placeholder="Your Main Github Page URL" style="height: 30px; width:70%; margin: -100px; top:12px; right:-310px; position:relative; box-shadow:inset 0px 1px 0px 0px #ffffff; background-color:#ffffff; border: 0px; font-size: 13px; font-weight:bold; color:#3881cf;">
+    </div>
+    <div id="loader" class="loader" style="display:none; margin-top:-100px">
+    </div> <div style="text-align:center; padding:10px">
+    
+          <p id="loading" style="display:none; margin:5px; text-align:center; padding: 20px; color:white;">
+        Getting your project ready...
+    </p>
+    </div>
+  </body>
+</html>
+
