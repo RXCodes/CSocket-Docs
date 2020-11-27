@@ -90,13 +90,14 @@ color:#00AAFF;
   <body>
     
     <script>
+	    var websitelink = null;
       function go() {
         document.getElementById("loading").innerHTML = "Redirecting...";
         console.log("Opening...")
         window.open(websitelink);
-        return;
+        
 }
-      var websitelink = null;
+      
 function url() {
   document.getElementById("field").style.position = "relative";
   document.getElementById("loader").style.display = "block";
