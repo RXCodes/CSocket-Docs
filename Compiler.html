@@ -92,8 +92,8 @@ color:#00AAFF;
     <script>
 	    var websitelink = null;
       function go() {
-        document.getElementById("loading").innerHTML = "Redirecting...";
-        console.log("Opening...")
+        document.getElementById("loading").innerHTML = "Redirecting to " + websitelink + "..." + "\n" + "Copy and paste the link in the browser if the redirect is not working!;
+        
         window.open(websitelink);
         
 }
